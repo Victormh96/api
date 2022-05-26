@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -10,6 +11,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(RoleSeeder::class);
         
-        factory('App\Models\User', 7000)->create(['role_id' => '1', 'estado' => 'Activado']);
+        User::factory()->count(50)->create(['role_id' => '1', 'estado' => 'Activado']);
     }
 }
